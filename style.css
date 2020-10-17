@@ -1,0 +1,120 @@
+#text {
+    text-align: justify;
+    padding: 5px;
+    font-family: "Times New Roman";
+
+    font-style: italic;
+    font-size: 14pt;
+}
+#page {
+    flex-direction: row;
+    display: flex;
+
+
+
+}
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+}
+div button {
+    /* по-умолчанию для <button>, но пригодится для <a> */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    /* невидимая граница (понадобится для цвета при наведении/фокусе) */
+    border: solid 1px transparent;
+    border-radius: 7px;
+    /* размер строится из текста и отступов (без width/height) */
+    padding: 0.5em 1em;
+    /* убедитесь, что достаточно контраста! */
+    color: #ffffff;
+    background-color: #970af5;
+    width: 90%;
+}
+div button:active {
+    transform: translateY(1px);
+    filter: saturate(70%);
+}
+div button:hover {
+    /*transform: translateY(1px);*/
+    /*filter: saturate(120%);*/
+    color: #f0f00e;
+}
+
+a:hover {
+    color:white;
+    text-decoration: underline;
+}
+/*.buttons {*/
+/*    text-align: center;*/
+/*    font-family: "Times New Roman";*/
+/*    min-width: 100px;*/
+
+/*}*/
+#col1 {
+    border-right:solid white;
+    width: 25%;
+    height: auto;
+    background: #FFF;
+    text-align: center;
+}
+#col2 {
+    border:none;
+    width: 50%;
+    height: auto;
+    background: rgba(255,242,0,0.7);
+}
+
+#col3 {
+    border-left:solid white;
+    width: 25%;
+    height: auto;
+    background: rgba(0,255,255,0.7);
+    text-align: right;
+}
+
+img {
+    padding: 10px;
+}
+
+#jobs {
+    width: 25%;
+    height: 25%;
+    float: right;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+}
+
+#apple {
+    width: 25%;
+    height: 25%;
+    float:left;
+
+}
+
+#baseApple {
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+#ru {
+    color: #ffffff;
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    border-radius: 10px;
+}
+#ru:active {
+    transform: translateY(1px);
+    color: black;
+    background-color: white;
+
+}
+

@@ -9,9 +9,6 @@
 #page {
     flex-direction: row;
     display: flex;
-
-
-
 }
 button {
     padding: 0;

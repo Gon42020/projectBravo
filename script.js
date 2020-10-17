@@ -59,12 +59,7 @@ function refreshPage() {
 }
 function RemoveChar() {
     let str=document.getElementById('text');
-let arrStr=str.textContent.split('');
-arrStr.pop();
-let newStr=arrStr.join('');
-
-str.textContent=newStr;
-    // console.log(newStr);
+str.innerHTML=str.innerHTML.substr(0,str.innerHTML.length-1);
 }
 function createCalculator() {
     let divPlus=document.createElement('div');
@@ -152,28 +147,43 @@ function createCalculator() {
     }
 
 }
+var lang='en';
 function changeLang() {
-
+    let arr=[{
+        'name':'rainbow',
+        'text':{'ru':'радуга','en':'rainbow'}
+    }];
+    if (lang==='en'){
+        lang='ru';
+    } else {
+        lang='en';
+    }
+        document.getElementById('lang').value=lang;
+    console.log(lang);
     let textButton1=document.getElementById('b1');
-    textButton1.textContent='Радуга';
-    let textButton2=document.getElementById('b2');
-    textButton2.textContent='Остановить радугу';
-    let textButton3=document.getElementById('b3');
-    textButton3.textContent='Измененить шрифт';
-    let textButton4=document.getElementById('b4');
-    textButton4.textContent='Изменить размер кнопки';
-    let textButton5=document.getElementById('b5');
-    textButton5.textContent='Изменить ширину центральной колонки';
-    let textButton6=document.getElementById('b6');
-    textButton6.textContent='Создать новую кнопку';
-    let textButton7=document.getElementById('b7');
-    textButton7.textContent='Создать калькулятор';
-    let textButton8=document.getElementById('b8');
-    textButton8.textContent='Скрыть созданую кнопку';
-    let textButton9=document.getElementById('b9');
-    textButton9.textContent='Отобразит спрятаую кнопку';
-    let textButton10=document.getElementById('b10');
-    textButton10.textContent='Обновить страницу';
-    let textButton11=document.getElementById('b11');
-    textButton11.textContent='Удалить символ с конца текста';
+    textButton1.textContent=arr[0].text[lang];
+    // let textButton2=document.getElementById('b2');
+    // textButton2.textContent='Остановить радугу';
+    // let textButton3=document.getElementById('b3');
+    // textButton3.textContent='Измененить шрифт';
+    // let textButton4=document.getElementById('b4');
+    // textButton4.textContent='Изменить размер кнопки';
+    // let textButton5=document.getElementById('b5');
+    // textButton5.textContent='Изменить ширину центральной колонки';
+    // let textButton6=document.getElementById('b6');
+    // textButton6.textContent='Создать новую кнопку';
+    // let textButton7=document.getElementById('b7');
+    // textButton7.textContent='Создать калькулятор';
+    // let textButton8=document.getElementById('b8');
+    // textButton8.textContent='Скрыть созданую кнопку';
+    // let textButton9=document.getElementById('b9');
+    // textButton9.textContent='Отобразит спрятаую кнопку';
+    // let textButton10=document.getElementById('b10');
+    // textButton10.textContent='Обновить страницу';
+    // let textButton11=document.getElementById('b11');
+    // textButton11.textContent='Удалить символ с конца текста';
 }
+
+
+
+

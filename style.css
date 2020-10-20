@@ -100,18 +100,19 @@ img {
     height: 50%;
     float: left;
 }
-#ru {
+#lang {
     color: #ffffff;
     background-color: black;
-    width: 25px;
-    height: 25px;
+    width: auto;
+    height: auto;
     margin: 10px;
     border-radius: 10px;
+
 }
-#ru:active {
+#lang:active {
     transform: translateY(1px);
     color: black;
     background-color: white;
-
 }
+
 

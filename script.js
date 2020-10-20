@@ -7,52 +7,70 @@ function rainbow() {
             i = 0;
         }
         elem = document.getElementById('col1');
+        // var elem=$('#col1');
         elem.style.background = colors[i];
         i++;
     }, 500);
 }
 function stopRainbow() {
     clearInterval(interval);
-    elem = document.getElementById('col1');
-    elem.style.background="#FFF";
+    // elem = document.getElementById('col1');
+    // elem.style.background="#FFF";
+    $('#col1').css('background','#FFF');
 }
 
 function changeFont() {
-    let elem=document.getElementById('text');
-    elem.style.fontFamily='Impact';
+    $('#text').css('font-family','Impact');
+    // let elem=document.getElementById('text');
+    // elem.style.fontFamily='Impact';
 }
 
 function changeSizeB() {
-    let elem=document.getElementById('b4');
-    elem.style.width='auto';
+    $('#b4').css('width','auto');
+    // let elem=document.getElementById('b4');
+    // elem.style.width='auto';
 }
 
 function changeWidthColum2() {
-    let elem=document.getElementById('col2');
-    elem.style.width='90%';
+    $('#col2').css('width','90%');
+    // let elem=document.getElementById('col2');
+    // elem.style.width='90%';
 }
 
 function createNewButton() {
-   let newDiv=document.createElement('div');
-   newDiv.innerHTML="<button id='needHide'>New Button</button>";
-   let colum1=document.getElementById('col3');
-    document.body-colum1.appendChild(newDiv);
+
+ // $('#col3').html($('#col3').html()+"<button id='needHide'>New Button</button>");
+// $('input').after("<button id='needHide'>New Button</button>");
+    $('<button id=\'needHide\'>New Button</button>').insertAfter('input');
+   // let newDiv=document.createElement('div');
+   // newDiv.innerHTML="<button id='needHide'>New Button</button>";
+   // let colum1=document.getElementById('col3');
+   //  document.body-colum1.appendChild(newDiv);
 }
 
 function hidenButton() {
-let hide=document.getElementById('needHide');
-if (hide.style.visibility==='hidden'){
+
+// let hide=document.getElementById('needHide');
+if ($('#needHide').css('visibility')==='hidden'){
     alert('Кнопка уже скрыта');}
 else{
-    hide.style.visibility='hidden';}
+    $('#needHide').css('visibility','hidden');
+    // hide.style.visibility='hidden';}
+}
 }
 
 function visibleButton() {
-    let visible=document.getElementById('needHide');
-    if (visible.style.visibility==='visible'){
+    // let visible=document.getElementById('needHide');
+    if ($('#needHide').css('visibility')==='visible'){
         alert('кнопка не скрыта');}
-    else if (visible.style.visibility='hidden'){
-    visible.style.visibility='visible';}
+    else if ($('#needHide').css('visibility')==='hidden'){
+        $('#needHide').css('visibility','visible');
+    // visible.style.visibility='visible';
+    }
+    else if ($('#col3').html()===$('#col3').html()){
+        alert('Кнопка не создана');
+    }
+
 }
 function refreshPage() {
   location.href=location.href;
@@ -151,38 +169,68 @@ var lang='en';
 function changeLang() {
     let arr=[{
         'name':'rainbow',
-        'text':{'ru':'радуга','en':'rainbow'}
-    }];
+        'text':{'ru':'Радуга','en':'Rainbow'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Остановить радугу','en':'Stop Rainbow'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Измененить шрифт','en':'Change font'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Изменить размер кнопки','en':'Change size button'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Изменить ширину центральной колонки','en':'Change center column width'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Создать новую кнопку','en':'Create new button'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Создать калькулятор','en':'Create calculator'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Скрыть созданую кнопку','en':'Hide created button'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Отобразит спрятаую кнопку','en':'Show hidden button'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Обновить страницу','en':'Refresh the webpage'}
+    }, {
+        'name':'rainbow',
+        'text':{'ru':'Удалить символ с конца текста','en':'Remove character from end of text'}
+    },];
     if (lang==='en'){
         lang='ru';
     } else {
         lang='en';
     }
-        document.getElementById('lang').value=lang;
-    console.log(lang);
+    document.getElementById('lang').value=lang;
     let textButton1=document.getElementById('b1');
     textButton1.textContent=arr[0].text[lang];
-    // let textButton2=document.getElementById('b2');
-    // textButton2.textContent='Остановить радугу';
-    // let textButton3=document.getElementById('b3');
-    // textButton3.textContent='Измененить шрифт';
-    // let textButton4=document.getElementById('b4');
-    // textButton4.textContent='Изменить размер кнопки';
-    // let textButton5=document.getElementById('b5');
-    // textButton5.textContent='Изменить ширину центральной колонки';
-    // let textButton6=document.getElementById('b6');
-    // textButton6.textContent='Создать новую кнопку';
-    // let textButton7=document.getElementById('b7');
-    // textButton7.textContent='Создать калькулятор';
-    // let textButton8=document.getElementById('b8');
-    // textButton8.textContent='Скрыть созданую кнопку';
-    // let textButton9=document.getElementById('b9');
-    // textButton9.textContent='Отобразит спрятаую кнопку';
-    // let textButton10=document.getElementById('b10');
-    // textButton10.textContent='Обновить страницу';
-    // let textButton11=document.getElementById('b11');
-    // textButton11.textContent='Удалить символ с конца текста';
+    let textButton2=document.getElementById('b2');
+    textButton2.textContent=arr[1].text[lang];
+    let textButton3=document.getElementById('b3');
+    textButton3.textContent=arr[2].text[lang];
+    let textButton4=document.getElementById('b4');
+    textButton4.textContent=arr[3].text[lang];
+    let textButton5=document.getElementById('b5');
+    textButton5.textContent=arr[4].text[lang];
+    let textButton6=document.getElementById('b6');
+    textButton6.textContent=arr[5].text[lang];
+    let textButton7=document.getElementById('b7');
+    textButton7.textContent=arr[6].text[lang];
+    let textButton8=document.getElementById('b8');
+    textButton8.textContent=arr[7].text[lang];
+    let textButton9=document.getElementById('b9');
+    textButton9.textContent=arr[8].text[lang];
+    let textButton10=document.getElementById('b10');
+    textButton10.textContent=arr[9].text[lang];
+    let textButton11=document.getElementById('b11');
+    textButton11.textContent=arr[10].text[lang];
 }
+
 
 
 

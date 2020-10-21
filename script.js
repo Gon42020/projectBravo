@@ -142,9 +142,10 @@ $('#b11').click(()=>{
     //     str.innerHTML = str.innerHTML.substr(0, str.innerHTML.length - 1);
     // }
 
-$("#b7").click(()=>{
-    $("<br>"+"<input id='inputN1' type='number'  ></input>").insertAfter('#lang');
-    $("<br>"+"<input id='inputN2' type='number' ></input>").insertAfter('#inputN1');
+$("#b7").click(()=> {
+
+    $("<br>" + "<input id='inputN1' type='number' ></input>").insertAfter('#lang');
+    $("<br>" + "<input id='inputN2' type='number' ></input>").insertAfter('#inputN1');
     $("<span>Число1</span>").insertAfter('#inputN1');
     $("<button id='plus'>+</button>").insertAfter('#inputN2');
     $("<span>Число2</span>").insertAfter('#inputN2');
@@ -154,6 +155,25 @@ $("#b7").click(()=>{
     $("<input id='inputResult' type='text' ></input>").insertAfter('#divis');
     $("<span id='results'>Результат</span>").insertAfter('#inputResult');
     $("<button id='refr'>Refresh Calc</button>").insertAfter('#results');
+
+
+        $("#plus").click(() => {
+            $("#inputResult").val(+($('#inputN1').val())+(+$('#inputN2').val()))
+        });
+        $("#minus").click(() => {
+            $("#inputResult").val($('#inputN1').val()-$('#inputN2').val())
+        });
+        $("#mult").click(() => {
+            $("#inputResult").val($('#inputN1').val()*$('#inputN2').val())
+        });
+        $("#divis").click(() => {
+            $("#inputResult").val($('#inputN1').val()/$('#inputN2').val())
+        });
+        $('#refr').click(()=>{
+            $("#inputResult").val(null);
+            $('#inputN1').val(null);
+            $('#inputN2').val(null);
+        });
 });
 
 // function createCalculator() {
@@ -243,71 +263,125 @@ $("#b7").click(()=>{
 //
 // }
     var lang = 'en';
-
-    function changeLang() {
-        let arr = [{
-            'name': 'rainbow',
-            'text': {'ru': 'Радуга', 'en': 'Rainbow'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Остановить радугу', 'en': 'Stop Rainbow'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Измененить шрифт', 'en': 'Change font'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Изменить размер кнопки', 'en': 'Change size button'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Изменить ширину центральной колонки', 'en': 'Change center column width'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Создать новую кнопку', 'en': 'Create new button'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Создать калькулятор', 'en': 'Create calculator'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Скрыть созданую кнопку', 'en': 'Hide created button'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Отобразит спрятаую кнопку', 'en': 'Show hidden button'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Обновить страницу', 'en': 'Refresh the webpage'}
-        }, {
-            'name': 'rainbow',
-            'text': {'ru': 'Удалить символ с конца текста', 'en': 'Remove character from end of text'}
-        },];
-        if (lang === 'en') {
-            lang = 'ru';
-        } else {
-            lang = 'en';
-        }
-        document.getElementById('lang').value = lang;
-        let textButton1 = document.getElementById('b1');
-        textButton1.textContent = arr[0].text[lang];
-        let textButton2 = document.getElementById('b2');
-        textButton2.textContent = arr[1].text[lang];
-        let textButton3 = document.getElementById('b3');
-        textButton3.textContent = arr[2].text[lang];
-        let textButton4 = document.getElementById('b4');
-        textButton4.textContent = arr[3].text[lang];
-        let textButton5 = document.getElementById('b5');
-        textButton5.textContent = arr[4].text[lang];
-        let textButton6 = document.getElementById('b6');
-        textButton6.textContent = arr[5].text[lang];
-        let textButton7 = document.getElementById('b7');
-        textButton7.textContent = arr[6].text[lang];
-        let textButton8 = document.getElementById('b8');
-        textButton8.textContent = arr[7].text[lang];
-        let textButton9 = document.getElementById('b9');
-        textButton9.textContent = arr[8].text[lang];
-        let textButton10 = document.getElementById('b10');
-        textButton10.textContent = arr[9].text[lang];
-        let textButton11 = document.getElementById('b11');
-        textButton11.textContent = arr[10].text[lang];
+$('#lang').click(()=>{
+    let arr = [{
+        'name': 'rainbow',
+        'text': {'ru': 'Радуга', 'en': 'Rainbow'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Остановить радугу', 'en': 'Stop Rainbow'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Измененить шрифт', 'en': 'Change font'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Изменить размер кнопки', 'en': 'Change size button'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Изменить ширину центральной колонки', 'en': 'Change center column width'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Создать новую кнопку', 'en': 'Create new button'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Создать калькулятор', 'en': 'Create calculator'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Скрыть созданую кнопку', 'en': 'Hide created button'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Отобразит спрятаую кнопку', 'en': 'Show hidden button'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Обновить страницу', 'en': 'Refresh the webpage'}
+    }, {
+        'name': 'rainbow',
+        'text': {'ru': 'Удалить символ с конца текста', 'en': 'Remove character from end of text'}
+    },];
+    if (lang === 'en') {
+        lang = 'ru';
+    } else {
+        lang = 'en';
     }
+    $('#lang').val=lang;
+
+    $('#b1').html(arr[0].text[lang]);
+    $('#b2').html(arr[1].text[lang]);
+    $('#b3').html(arr[2].text[lang]);
+    $('#b4').html(arr[3].text[lang]);
+    $('#b5').html(arr[4].text[lang]);
+    $('#b6').html(arr[5].text[lang]);
+    $('#b7').html(arr[6].text[lang]);
+    $('#b8').html(arr[7].text[lang]);
+    $('#b9').html(arr[8].text[lang]);
+    $('#b10').html(arr[9].text[lang]);
+    $('#b11').html(arr[10].text[lang]);
+
+});
+    // function changeLang() {
+    //     let arr = [{
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Радуга', 'en': 'Rainbow'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Остановить радугу', 'en': 'Stop Rainbow'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Измененить шрифт', 'en': 'Change font'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Изменить размер кнопки', 'en': 'Change size button'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Изменить ширину центральной колонки', 'en': 'Change center column width'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Создать новую кнопку', 'en': 'Create new button'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Создать калькулятор', 'en': 'Create calculator'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Скрыть созданую кнопку', 'en': 'Hide created button'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Отобразит спрятаую кнопку', 'en': 'Show hidden button'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Обновить страницу', 'en': 'Refresh the webpage'}
+    //     }, {
+    //         'name': 'rainbow',
+    //         'text': {'ru': 'Удалить символ с конца текста', 'en': 'Remove character from end of text'}
+    //     },];
+    //     if (lang === 'en') {
+    //         lang = 'ru';
+    //     } else {
+    //         lang = 'en';
+    //     }
+    //     document.getElementById('lang').value = lang;
+    //     let textButton1 = document.getElementById('b1');
+    //     textButton1.textContent = arr[0].text[lang];
+    //     let textButton2 = document.getElementById('b2');
+    //     textButton2.textContent = arr[1].text[lang];
+    //     let textButton3 = document.getElementById('b3');
+    //     textButton3.textContent = arr[2].text[lang];
+    //     let textButton4 = document.getElementById('b4');
+    //     textButton4.textContent = arr[3].text[lang];
+    //     let textButton5 = document.getElementById('b5');
+    //     textButton5.textContent = arr[4].text[lang];
+    //     let textButton6 = document.getElementById('b6');
+    //     textButton6.textContent = arr[5].text[lang];
+    //     let textButton7 = document.getElementById('b7');
+    //     textButton7.textContent = arr[6].text[lang];
+    //     let textButton8 = document.getElementById('b8');
+    //     textButton8.textContent = arr[7].text[lang];
+    //     let textButton9 = document.getElementById('b9');
+    //     textButton9.textContent = arr[8].text[lang];
+    //     let textButton10 = document.getElementById('b10');
+    //     textButton10.textContent = arr[9].text[lang];
+    //     let textButton11 = document.getElementById('b11');
+    //     textButton11.textContent = arr[10].text[lang];
+    // }
 
 });
 

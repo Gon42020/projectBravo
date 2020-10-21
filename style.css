@@ -6,6 +6,11 @@
     font-style: italic;
     font-size: 14pt;
 }
+
+body {
+
+    margin: 0;
+}
 #page {
     flex-direction: row;
     display: flex;
@@ -25,13 +30,13 @@ div button {
     text-align: center;
     text-decoration: none;
     /* невидимая граница (понадобится для цвета при наведении/фокусе) */
-    border: solid 1px transparent;
+    border: solid 2px black;
     border-radius: 7px;
     /* размер строится из текста и отступов (без width/height) */
     padding: 0.5em 1em;
     /* убедитесь, что достаточно контраста! */
     color: #ffffff;
-    background-color: #970af5;
+    background:linear-gradient(90deg,#5663ff, #46f530);
     width: 90%;
 }
 div button:active {
@@ -54,25 +59,49 @@ a:hover {
 /*    min-width: 100px;*/
 
 /*}*/
+.red{
+    background:linear-gradient(90deg, #ff0000,#FFA500);
+}
+.orange{
+    background:linear-gradient(90deg,#FFA500,#FFFF00);
+}
+.yellow{
+    background:linear-gradient(90deg,#FFFF00,#7CFC00);
+}
+.green{
+    background:linear-gradient(90deg,#7CFC00,#00BFFF);
+}
+.blue{
+    background:linear-gradient(90deg,#00BFFF,#0000FF);
+}
+.darkBlue{
+    background:linear-gradient(90deg,#0000FF,#FF00FF);
+}
+.violet{
+    background:linear-gradient(90deg,#FF00FF,#ff0000);
+}
+.std{
+    background: linear-gradient(90deg,#ff2c37,#FFF);
+}
 #col1 {
     border-right:solid white;
     width: 25%;
     height: auto;
-    background: #FFF;
+    /*background: #FFF;*/
     text-align: center;
 }
 #col2 {
     border:none;
     width: 50%;
     height: auto;
-    background: rgba(255,242,0,0.7);
+    background: linear-gradient(90deg,#FFF,#FFF200);
 }
 
 #col3 {
     border-left:solid white;
     width: 25%;
     height: auto;
-    background: rgba(0,255,255,0.7);
+    background: linear-gradient(90deg,#FFF200,#00FFFF);
     text-align: right;
 }
 

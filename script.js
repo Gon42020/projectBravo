@@ -1,21 +1,37 @@
 $('document').ready(()=>{
-
     let interval = null;
     $('#b1').click(()=>{
-        let colors = ["#FF0000", "#FFA500", "#FFFF00", "#7CFC00", "#00BFFF", "#0000FF", "#FF00FF"];
-            let i = 0;
+        // let colors = ["#FF0000", "#FFA500", "#FFFF00", "#7CFC00", "#00BFFF", "#0000FF", "#FF00FF"];
+        $('#col1').removeClass('std');
+        let colors=['red','orange','yellow','green','blue','darkBlue','violet'];
+        let i=0;
         interval = setInterval(() => {
-            if (i === colors.length) {
+            if (i===colors.length) {
                 i = 0;
             }
-            $('#col1').css('background',colors[i]);
-            // elem = document.getElementById('col1');
-            // var elem=$('#col1');
-            // elem.style.background = colors[i];
+            $('#col1').attr('class',colors[i]);
             i++;
-        }, 500);
-        }
-    )
+            console.log(i);
+        }, 1000);
+
+
+    });
+
+    // let interval = null;
+    // $('#b1').click(()=>{
+    //     let colors = ["#FF0000", "#FFA500", "#FFFF00", "#7CFC00", "#00BFFF", "#0000FF", "#FF00FF"];
+    //         let i = 0;
+    //     interval = setInterval(() => {
+    //         if (i === colors.length) {
+    //             i = 0;
+    //         }
+    //         $('#col1').css('background',colors[i]);
+    //         // elem = document.getElementById('col1');
+    //         // var elem=$('#col1');
+    //         // elem.style.background = colors[i];
+    //         i++;
+    //     }, 500);
+    //     });
 // function rainbow() {
 //         let colors = ["#FF0000", "#FFA500", "#FFFF00", "#7CFC00", "#00BFFF", "#0000FF", "#FF00FF"];
 //         let i = 0;
@@ -31,7 +47,8 @@ $('document').ready(()=>{
 //     });
 $('#b2').click(()=>{
     clearInterval(interval);
-    $('#col1').css('background', '#FFF');
+    $('#col1').attr('class','std');
+    i=0;// если не сделать i продолжает бегать в функции выше
 });
     // function stopRainbow() {
     //     clearInterval(interval);
@@ -67,13 +84,11 @@ $('#b5').click(()=>{
 
 $('#b6').click(()=>{
     $("<button id='needHide'>New Button</button>").insertAfter('input');
+// Вариант// $('#col3').html($('#col3').html()+"<button id='needHide'>New Button</button>");
+// Вариант// $('input').after("<button id='needHide'>New Button</button>");
 });
 
 //     function createNewButton() {
-//
-//         // $('#col3').html($('#col3').html()+"<button id='needHide'>New Button</button>");
-// // $('input').after("<button id='needHide'>New Button</button>");
-//         $("<button id='needHide'>New Button</button>").insertAfter('input');
 //         // let newDiv=document.createElement('div');
 //         // newDiv.innerHTML="<button id='needHide'>New Button</button>";
 //         // let colum1=document.getElementById('col3');
@@ -90,6 +105,10 @@ $('#b8').click(()=> {
                 alert('Кнопка не создана');}
 
         });
+// Вариант
+    // $('#b8').click(()=> {
+    //     $('#needHide').hide();
+    //  });
 
     // function hidenButton() {
     //
@@ -102,6 +121,7 @@ $('#b8').click(()=> {
     //     }
     // }
 
+
 $('#b9').click(()=>{
         if ($('#needHide').css('visibility') === 'visible') {
                     alert('кнопка не скрыта');
@@ -110,6 +130,10 @@ $('#b9').click(()=>{
                 } else if ($('#col3').html() === $('#col3').html()) {
                     alert('Кнопка не создана');}
     });
+    // Вариант
+    // $('#b9').click(()=>{
+    //     $('#needHide').show();
+    // });
 
     // function visibleButton() {
     //     // let visible=document.getElementById('needHide');
